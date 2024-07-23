@@ -15,6 +15,11 @@ btn.addEventListener('click', function(){
 // funzioni
 function boxPrinter (difficolta){
     let num = 0;
+    let valore;
+    let contatore = 0; // variabile contatore che stabilirà il punteggio
+    let WinOrLose = true;
+    let bombs = []; // array vuoto delle bombe
+    let k = 1; 
 
     if(difficolta == 'normal'){ // trasforma il valore di num in base alla difficoltà
         num = 100; 
@@ -28,8 +33,7 @@ function boxPrinter (difficolta){
         num = 49;
         
     }
-    let bombs = []; // array vuoto delle bombe
-    let k = 1;
+    
     while (k <= 16){ // ciclo indefinito per la generazione delle bombe
         let randomNmb = getRndInteger(1 , num);
         if (!bombs.includes(randomNmb)){
@@ -39,9 +43,7 @@ function boxPrinter (difficolta){
     }
     console.log('le bombe sono:', bombs); 
     
-    let valore;
-    let contatore = 0; // variabile contatore che stabilirà il punteggio
-    let WinOrLose = true; 
+    
     for (let i = 1; i <= num; i++){  // ciclo per stampare i box in pagina in base alla difficoltà scelta dall'utente
         
         let col = document.createElement('div');
