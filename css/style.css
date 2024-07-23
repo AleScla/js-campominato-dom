@@ -1,0 +1,88 @@
+
+/* RESET */
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+
+}
+
+/* FONT */
+html{
+    font-family: "Roboto", sans-serif;
+}
+
+/* header */
+.hdr-container{
+    display:flex;
+    width:100%;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    align-items: center;
+    padding:15px;
+    height:80px;
+}
+.hdr-left{
+    display:flex;
+    align-items:center;
+}
+
+h1{
+    margin-left:10px;
+}
+
+#play, select{
+    padding:5px;
+    font-size:1.5rem;
+}
+
+/* main */
+main{
+    background-color:rgba(135, 206, 250, 0.856);
+    width:100%;
+    height:calc(100vh - 120px);
+}
+
+.container{
+    width:1200px;
+    margin:auto;
+    padding:20px;
+    display:flex;
+    flex-wrap:wrap;
+}
+
+/* footer */
+footer{
+    width:100%;
+    height:40px;
+}
+
+
+
+.hardest, .hard, .normal{
+    display:flex;
+    border:1px solid black;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content: center;
+    height: calc((100vh - 160px) / 10); /* 100% della pagina - 120px di footer e header e -40px di padding del container */
+}
+
+.normal{
+    width:calc(100% / 10);
+}
+
+.hard{
+    width:calc(100% / 9);
+}
+
+.hardest{
+    width:calc(100% / 7);
+}
+
+.lightcoral{
+    background-color:lightcoral;
+}
+
+
+/* FRANCESCO DEVI ANDARTENE */
