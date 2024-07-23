@@ -3,12 +3,14 @@ const btn = document.querySelector('button');
 const container = document.querySelector('.container');
 
 btn.addEventListener('click', function(){
-    
     let difficulties = document.getElementById('difficulties').value;
     console.log(difficulties);
     container.innerHTML = '';
+    
     boxPrinter(difficulties);
-
+    
+    
+    
 })
 
 // funzioni
@@ -23,12 +25,12 @@ function boxPrinter (difficolta){
 
     else if (difficolta == 'hard'){
         num = 81;
-        console.log(num);
+        
     }
 
     else{
         num = 49;
-        console.log(num);
+        
     }
 
     for (let i = 1; i <= num; i++){
@@ -37,11 +39,27 @@ function boxPrinter (difficolta){
         col.classList.add(difficolta);
         container.append(col);
         col.addEventListener('click', function(){
-            col.classList.toggle('lightcoral');
-            console.log(i)
+            col.classList.add('lightcoral');
+            console.log(i);
         })
     }
-    
+
+    let bombs = [];
+    let k = 1;
+    while (k <= 16){
+        let randomNmb = getRndInteger(1 , num);
+        if (!bombs.includes(randomNmb)){
+            bombs.push (randomNmb);
+            k++;
+        }
+    }
+    console.log('le bombe sono:', bombs);
+
+    return num
+}
+
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
 
 
